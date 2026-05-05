@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inference Endpoints — pricing section mock</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              page: "#0B0F19",
+              line: "#2A3654",
+            },
+            fontFamily: {
+              mono: [
+                "ui-monospace",
+                "SFMono-Regular",
+                "JetBrains Mono",
+                "Menlo",
+                "Consolas",
+                "monospace",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Inter,
+          sans-serif;
+      }
+      /* Smooth chevron rotation */
+      [data-expanded="true"] .chev {
+        transform: rotate(90deg);
+      }
+      /* Collapsed state: only summary-range is visible.
+         Expanded state: summary-first replaces summary-range, plus extra detail rows. */
+      tr.detail,
+      tr.summary-first {
+        display: none;
+      }
+      tbody[data-expanded="true"] tr.detail,
+      tbody[data-expanded="true"] tr.summary-first {
+        display: table-row;
+      }
+      tbody[data-expanded="true"] tr.summary-range {
+        display: none;
+      }
+      /* Match live page: all cells use px-4 py-3, no special first/last padding.
+         The table fills the inner frame; row dividers extend edge-to-edge. */
+    </style>
+  </head>
+  <body class="bg-page text-white">
+    <section>
+      <!-- Outer frame: vertical dashed lines at the section/page edge -->
+      <div class="mx-auto max-w-7xl border-x border-dashed border-line">
+        <!-- Inner padding so the stubs (size-5 = 20px) bridge exactly to the inner frame -->
+        <div class="px-5 py-10">
+        <!-- Header block: inner frame, vertical dashed sides only -->
+        <div class="border-x border-dashed border-line p-8 sm:p-10 lg:p-14">
+          <div class="mb-8 flex items-center justify-between gap-2">
+            <span
+              class="inline-block rounded-full bg-indigo-600/10 px-4 py-1 text-sm font-semibold text-indigo-500"
+              >Inference Endpoints</span
+            >
+            <a
+              href="https://endpoints.huggingface.co"
+              target="_blank"
+              rel="noopener"
+              class="inline-block rounded-full bg-white px-3 py-1.5 text-sm text-black hover:bg-gray-100"
+              ><span class="mr-1.5">→</span> Learn more</a
+            >
+          </div>
+          <h2
+            class="mb-4 text-balance text-3xl font-bold text-white md:text-4xl"
+          >
+            Dedicated inference, starting at $0.033/hour.
+          </h2>
+          <p class="max-w-3xl text-lg text-gray-400">
+            Deploy any ML model on dedicated and autoscaling infrastructure,
+            right from the HF Hub. Secure, production-ready, with no cold
+            starts.
+          </p>
+        </div>
+
+        <!-- Tables wrapper: horizontal dashed top/bottom + corners + extension stubs -->
+        <div class="relative border-y border-dashed border-line">
+          <!-- 4 horizontal extension stubs that extend the dashed line out to the section edge -->
+          <div
+            aria-hidden="true"
+            class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"
+          ></div>
+          <div
+            aria-hidden="true"
+            class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"
+          ></div>
+          <div
+            aria-hidden="true"
+            class="absolute bottom-0 left-0 size-5 -translate-x-full translate-y-px border-b border-dashed border-line"
+          ></div>
+          <div
+            aria-hidden="true"
+            class="absolute right-0 bottom-0 size-5 translate-x-full translate-y-px border-b border-dashed border-line"
+          ></div>
+
+          <!-- 4 corner circles: bg matches page so they "punch through" the dashed line at the intersection -->
+          <div
+            aria-hidden="true"
+            class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
+          ></div>
+          <div
+            aria-hidden="true"
+            class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
+          ></div>
+          <div
+            aria-hidden="true"
+            class="absolute -bottom-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
+          ></div>
+          <div
+            aria-hidden="true"
+            class="absolute -right-[3.5px] -bottom-[4.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
+          ></div>
+
+          <!-- CPU instances -->
+          <div class="border-x border-dashed border-line">
+            <div class="px-4 pt-8 pb-3">
+              <h3 class="text-sm font-semibold tracking-widest text-gray-400 uppercase">
+                CPU instances
+              </h3>
+            </div>
+            <div class="relative border-t border-dashed border-line pb-6">
+              <!-- Stubs bridging the title↔column-headers divider out to the outer frame -->
+              <div aria-hidden="true" class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"></div>
+              <div aria-hidden="true" class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"></div>
+              <!-- Circle markers at the inner-frame intersections -->
+              <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+              <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+              <table class="w-full font-mono text-sm">
+                <thead>
+                  <tr class="bg-[#0F121F] text-[11px] tracking-widest text-gray-400 uppercase">
+                    <th class="px-4 py-3 text-left font-medium">Provider</th>
+                    <th class="px-4 py-3 text-left font-medium">Architecture</th>
+                    <th class="px-4 py-3 text-right font-medium">vCPUs</th>
+                    <th class="px-4 py-3 text-right font-medium">Memory</th>
+                    <th class="px-4 py-3 text-right font-medium">Hourly Rate</th>
+                  </tr>
+                </thead>
+                <tbody id="cpu-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- GPU instances -->
+          <div class="relative border-x border-t border-dashed border-line">
+            <!-- Inter-section divider stubs that bridge to the outer frame -->
+            <div
+              aria-hidden="true"
+              class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"
+            ></div>
+            <div
+              aria-hidden="true"
+              class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"
+            ></div>
+            <!-- Circle markers at the inner-frame intersections -->
+            <div
+              aria-hidden="true"
+              class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
+            ></div>
+            <div
+              aria-hidden="true"
+              class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
+            ></div>
+            <div class="px-4 pt-8 pb-3">
+              <h3 class="text-sm font-semibold tracking-widest text-gray-400 uppercase">
+                GPU instances
+              </h3>
+            </div>
+            <div class="relative border-t border-dashed border-line pb-6">
+              <div aria-hidden="true" class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"></div>
+              <div aria-hidden="true" class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"></div>
+              <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+              <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+              <table class="w-full font-mono text-sm">
+                <thead>
+                  <tr class="bg-[#0F121F] text-[11px] tracking-widest text-gray-400 uppercase">
+                    <th class="px-4 py-3 text-left font-medium">Provider</th>
+                    <th class="px-4 py-3 text-left font-medium">Architecture</th>
+                    <th class="px-4 py-3 text-right font-medium">GPUs</th>
+                    <th class="px-4 py-3 text-right font-medium">GPU Memory</th>
+                    <th class="px-4 py-3 text-right font-medium">Hourly Rate</th>
+                  </tr>
+                </thead>
+                <tbody id="gpu-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Accelerator instances -->
+          <div class="relative border-x border-t border-dashed border-line">
+            <!-- Inter-section divider stubs that bridge to the outer frame -->
+            <div
+              aria-hidden="true"
+              class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"
+            ></div>
+            <div
+              aria-hidden="true"
+              class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"
+            ></div>
+            <!-- Circle markers at the inner-frame intersections -->
+            <div
+              aria-hidden="true"
+              class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
+            ></div>
+            <div
+              aria-hidden="true"
+              class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
+            ></div>
+            <div class="px-4 pt-8 pb-3">
+              <h3 class="text-sm font-semibold tracking-widest text-gray-400 uppercase">
+                Accelerator instances
+              </h3>
+            </div>
+            <div class="relative border-t border-dashed border-line pb-10">
+              <div aria-hidden="true" class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"></div>
+              <div aria-hidden="true" class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"></div>
+              <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+              <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+              <table class="w-full font-mono text-sm">
+                <thead>
+                  <tr class="bg-[#0F121F] text-[11px] tracking-widest text-gray-400 uppercase">
+                    <th class="px-4 py-3 text-left font-medium">Provider</th>
+                    <th class="px-4 py-3 text-left font-medium">Architecture</th>
+                    <th class="px-4 py-3 text-right font-medium">Topology</th>
+                    <th class="px-4 py-3 text-right font-medium">Accel. Memory</th>
+                    <th class="px-4 py-3 text-right font-medium">Hourly Rate</th>
+                  </tr>
+                </thead>
+                <tbody id="accel-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Source data — flat lists, then grouped by (provider, architecture).
+      const cpuRows = [
+        ["aws", "Intel Sapphire Rapids", 1, "2GB", 0.03],
+        ["aws", "Intel Sapphire Rapids", 2, "4GB", 0.07],
+        ["aws", "Intel Sapphire Rapids", 4, "8GB", 0.13],
+        ["aws", "Intel Sapphire Rapids", 8, "16GB", 0.27],
+        ["aws", "Intel Sapphire Rapids", 16, "32GB", 0.54],
+        ["aws", "Intel Sapphire Rapids (overcommit)", 16, "32GB", 0.01],
+        ["azure", "Intel Xeon", 1, "2GB", 0.06],
+        ["azure", "Intel Xeon", 2, "4GB", 0.12],
+        ["azure", "Intel Xeon", 4, "8GB", 0.24],
+        ["azure", "Intel Xeon", 8, "16GB", 0.48],
+        ["gcp", "Intel Sapphire Rapids", 1, "2GB", 0.05],
+        ["gcp", "Intel Sapphire Rapids", 2, "4GB", 0.10],
+        ["gcp", "Intel Sapphire Rapids", 4, "8GB", 0.20],
+        ["gcp", "Intel Sapphire Rapids", 8, "16GB", 0.40],
+      ];
+
+      const gpuRows = [
+        ["aws", "NVIDIA T4", 1, "14GB", 0.50],
+        ["aws", "NVIDIA T4", 4, "56GB", 3.00],
+        ["aws", "NVIDIA L4", 1, "24GB", 0.80],
+        ["aws", "NVIDIA L4", 4, "96GB", 3.80],
+        ["aws", "NVIDIA L40S", 1, "48GB", 1.80],
+        ["aws", "NVIDIA L40S", 4, "192GB", 8.30],
+        ["aws", "NVIDIA L40S", 8, "384GB", 23.50],
+        ["aws", "NVIDIA A10G", 1, "24GB", 1.00],
+        ["aws", "NVIDIA A10G", 4, "96GB", 5.00],
+        ["aws", "NVIDIA A100", 1, "80GB", 2.50],
+        ["aws", "NVIDIA A100", 2, "160GB", 5.00],
+        ["aws", "NVIDIA A100", 4, "320GB", 10.00],
+        ["aws", "NVIDIA A100", 8, "640GB", 20.00],
+        ["aws", "NVIDIA H100", 1, "80GB", 4.50],
+        ["aws", "NVIDIA H100", 2, "160GB", 9.00],
+        ["aws", "NVIDIA H100", 4, "320GB", 18.00],
+        ["aws", "NVIDIA H100", 8, "640GB", 36.00],
+        ["aws", "NVIDIA H200", 1, "141GB", 5.00],
+        ["aws", "NVIDIA H200", 2, "282GB", 10.00],
+        ["aws", "NVIDIA H200", 4, "564GB", 20.00],
+        ["aws", "NVIDIA H200", 8, "1128GB", 40.00],
+        ["aws", "NVIDIA B200", 1, "179GB", 9.25],
+        ["aws", "NVIDIA B200", 2, "358GB", 18.50],
+        ["aws", "NVIDIA B200", 4, "716GB", 37.00],
+        ["aws", "NVIDIA B200", 8, "1432GB", 74.00],
+        ["gcp", "NVIDIA T4", 1, "16GB", 0.50],
+        ["gcp", "NVIDIA L4", 1, "24GB", 0.70],
+        ["gcp", "NVIDIA L4", 4, "96GB", 3.80],
+        ["gcp", "NVIDIA A100", 1, "80GB", 3.60],
+        ["gcp", "NVIDIA A100", 2, "160GB", 7.20],
+        ["gcp", "NVIDIA A100", 4, "320GB", 14.40],
+        ["gcp", "NVIDIA A100", 8, "640GB", 28.80],
+        ["gcp", "NVIDIA H100", 1, "80GB", 10.00],
+        ["gcp", "NVIDIA H100", 2, "160GB", 20.00],
+        ["gcp", "NVIDIA H100", 4, "320GB", 40.00],
+        ["gcp", "NVIDIA H100", 8, "640GB", 80.00],
+      ];
+
+      const accelRows = [
+        ["aws", "Inf2 Neuron", "x1", "14.5GB", 0.75],
+        ["aws", "Inf2 Neuron", "x1-large", "124GB", 1.95],
+        ["aws", "Inf2 Neuron", "x12", "760GB", 12.00],
+        ["gcp", "TPU v5e", "1x1", "16GB", 1.20],
+        ["gcp", "TPU v5e", "2x2", "64GB", 4.75],
+        ["gcp", "TPU v5e", "2x4", "128GB", 9.50],
+      ];
+
+      // ----- helpers -----
+      const fmtPrice = (n) => `$${n.toFixed(2)}`;
+      const memNum = (s) => parseFloat(s);
+      const memUnit = (s) => s.replace(/[\d.]/g, "");
+
+      function memRange(memStrings) {
+        const nums = memStrings.map(memNum);
+        const min = Math.min(...nums);
+        const max = Math.max(...nums);
+        const unit = memUnit(memStrings[0]);
+        return min === max ? `${min}${unit}` : `${min}–${max}${unit}`;
+      }
+
+      function priceRange(prices) {
+        const min = Math.min(...prices);
+        const max = Math.max(...prices);
+        return min === max ? fmtPrice(min) : `${fmtPrice(min)} – ${fmtPrice(max)}`;
+      }
+
+      function countRange(counts) {
+        const min = Math.min(...counts);
+        const max = Math.max(...counts);
+        return min === max ? `${min}` : `${min}–${max}`;
+      }
+
+      function topologyRange(topos) {
+        if (topos.length === 1) return topos[0];
+        return `${topos[0]} – ${topos[topos.length - 1]}`;
+      }
+
+      // Group flat rows into [{provider, arch, items: [...]}] preserving input order.
+      function group(rows) {
+        const out = [];
+        const idx = new Map();
+        for (const r of rows) {
+          const key = `${r[0]}|||${r[1]}`;
+          if (!idx.has(key)) {
+            idx.set(key, out.length);
+            out.push({ provider: r[0], arch: r[1], items: [] });
+          }
+          out[idx.get(key)].items.push(r);
+        }
+        return out;
+      }
+
+      // ----- renderers -----
+      const CHEV = `<svg class="chev h-3 w-3 text-gray-500 transition-transform" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M4 2l4 4-4 4z"/></svg>`;
+      const CHEV_PLACEHOLDER = `<span class="inline-block h-3 w-3"></span>`;
+
+      function renderNumericTable(tbody, rows) {
+        // rows shape: [provider, arch, count, mem, price]
+        const groups = group(rows);
+        const html = groups
+          .map((g, gi) => {
+            const counts = g.items.map((r) => r[2]);
+            const mems = g.items.map((r) => r[3]);
+            const prices = g.items.map((r) => r[4]);
+            const isMulti = g.items.length > 1;
+            const first = g.items[0];
+
+            const rowCls = `border-t border-dashed border-line ${
+              isMulti ? "cursor-pointer transition-colors hover:bg-line/40" : ""
+            }`;
+            const toggleAttr = isMulti ? `data-toggle="${gi}"` : "";
+
+            // Shown when collapsed: range view of the whole group.
+            const summaryRange = `
+              <tr class="summary-range ${rowCls}" ${toggleAttr}>
+                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
+                <td class="px-4 py-3 text-gray-200">
+                  <span class="inline-flex items-center gap-2">
+                    ${isMulti ? CHEV : CHEV_PLACEHOLDER}
+                    ${g.arch}
+                  </span>
+                </td>
+                <td class="px-4 py-3 text-right text-gray-300">${countRange(counts)}</td>
+                <td class="px-4 py-3 text-right text-gray-300">${memRange(mems)}</td>
+                <td class="px-4 py-3 text-right font-bold text-white">${priceRange(prices)}</td>
+              </tr>
+            `;
+
+            // Shown when expanded: replaces the range row with the first item's actual values.
+            const summaryFirst = isMulti
+              ? `
+              <tr class="summary-first ${rowCls}" ${toggleAttr}>
+                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
+                <td class="px-4 py-3 text-gray-200">
+                  <span class="inline-flex items-center gap-2">
+                    ${CHEV}
+                    ${g.arch}
+                  </span>
+                </td>
+                <td class="px-4 py-3 text-right text-gray-300">${first[2]}</td>
+                <td class="px-4 py-3 text-right text-gray-300">${first[3]}</td>
+                <td class="px-4 py-3 text-right font-bold text-white">${fmtPrice(first[4])}</td>
+              </tr>
+            `
+              : "";
+
+            // Detail rows for items 2..N (the first item is now in summary-first).
+            const details = isMulti
+              ? g.items
+                  .slice(1)
+                  .map(
+                    (r) => `
+                      <tr class="detail border-t border-dashed border-line/50 bg-page/40">
+                        <td class="px-4 py-2"></td>
+                        <td class="px-4 py-2 pl-9 text-gray-500">↳</td>
+                        <td class="px-4 py-2 text-right text-gray-300">${r[2]}</td>
+                        <td class="px-4 py-2 text-right text-gray-300">${r[3]}</td>
+                        <td class="px-4 py-2 text-right font-bold text-white">${fmtPrice(r[4])}</td>
+                      </tr>
+                    `
+                  )
+                  .join("")
+              : "";
+
+            return `<tbody data-group="${gi}">${summaryRange}${summaryFirst}${details}</tbody>`;
+          })
+          .join("");
+
+        // Replace the placeholder tbody with the rendered groups
+        tbody.outerHTML = html;
+      }
+
+      function renderAccelTable(tbody, rows) {
+        // rows shape: [provider, arch, topology, mem, price]
+        const groups = group(rows);
+        const html = groups
+          .map((g, gi) => {
+            const topos = g.items.map((r) => r[2]);
+            const mems = g.items.map((r) => r[3]);
+            const prices = g.items.map((r) => r[4]);
+            const isMulti = g.items.length > 1;
+            const first = g.items[0];
+
+            const rowCls = `border-t border-dashed border-line ${
+              isMulti ? "cursor-pointer transition-colors hover:bg-line/40" : ""
+            }`;
+            const toggleAttr = isMulti ? `data-toggle="a${gi}"` : "";
+
+            const summaryRange = `
+              <tr class="summary-range ${rowCls}" ${toggleAttr}>
+                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
+                <td class="px-4 py-3 text-gray-200">
+                  <span class="inline-flex items-center gap-2">
+                    ${isMulti ? CHEV : CHEV_PLACEHOLDER}
+                    ${g.arch}
+                  </span>
+                </td>
+                <td class="px-4 py-3 text-right text-gray-300">${topologyRange(topos)}</td>
+                <td class="px-4 py-3 text-right text-gray-300">${memRange(mems)}</td>
+                <td class="px-4 py-3 text-right font-bold text-white">${priceRange(prices)}</td>
+              </tr>
+            `;
+
+            const summaryFirst = isMulti
+              ? `
+              <tr class="summary-first ${rowCls}" ${toggleAttr}>
+                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
+                <td class="px-4 py-3 text-gray-200">
+                  <span class="inline-flex items-center gap-2">
+                    ${CHEV}
+                    ${g.arch}
+                  </span>
+                </td>
+                <td class="px-4 py-3 text-right text-gray-300">${first[2]}</td>
+                <td class="px-4 py-3 text-right text-gray-300">${first[3]}</td>
+                <td class="px-4 py-3 text-right font-bold text-white">${fmtPrice(first[4])}</td>
+              </tr>
+            `
+              : "";
+
+            const details = isMulti
+              ? g.items
+                  .slice(1)
+                  .map(
+                    (r) => `
+                      <tr class="detail border-t border-dashed border-line/50 bg-page/40">
+                        <td class="px-4 py-2"></td>
+                        <td class="px-4 py-2 pl-9 text-gray-500">↳</td>
+                        <td class="px-4 py-2 text-right text-gray-300">${r[2]}</td>
+                        <td class="px-4 py-2 text-right text-gray-300">${r[3]}</td>
+                        <td class="px-4 py-2 text-right font-bold text-white">${fmtPrice(r[4])}</td>
+                      </tr>
+                    `
+                  )
+                  .join("")
+              : "";
+
+            return `<tbody data-group="a${gi}">${summaryRange}${summaryFirst}${details}</tbody>`;
+          })
+          .join("");
+
+        tbody.outerHTML = html;
+      }
+
+      // Bootstrap
+      renderNumericTable(document.getElementById("cpu-tbody"), cpuRows);
+      renderNumericTable(document.getElementById("gpu-tbody"), gpuRows);
+      renderAccelTable(document.getElementById("accel-tbody"), accelRows);
+
+      // Click delegation: toggle expansion on summary rows
+      document.addEventListener("click", (e) => {
+        const summary = e.target.closest("tr[data-toggle]");
+        if (!summary) return;
+        const tbody = summary.parentElement;
+        const expanded = tbody.getAttribute("data-expanded") === "true";
+        tbody.setAttribute("data-expanded", expanded ? "false" : "true");
+      });
+    </script>
+  </body>
+</html>
