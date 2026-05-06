@@ -144,7 +144,14 @@
               <!-- Circle markers at the inner-frame intersections -->
               <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
               <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
-              <table class="w-full font-mono text-sm">
+              <table class="w-full table-fixed font-mono text-sm">
+                <colgroup>
+                  <col style="width: 10%" />
+                  <col style="width: 35%" />
+                  <col style="width: 10%" />
+                  <col style="width: 20%" />
+                  <col style="width: 25%" />
+                </colgroup>
                 <thead>
                   <tr class="bg-[#0F121F] text-[11px] tracking-widest text-gray-400 uppercase">
                     <th class="px-4 py-3 text-left font-medium">Provider</th>
@@ -189,7 +196,14 @@
               <div aria-hidden="true" class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"></div>
               <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
               <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
-              <table class="w-full font-mono text-sm">
+              <table class="w-full table-fixed font-mono text-sm">
+                <colgroup>
+                  <col style="width: 10%" />
+                  <col style="width: 35%" />
+                  <col style="width: 10%" />
+                  <col style="width: 20%" />
+                  <col style="width: 25%" />
+                </colgroup>
                 <thead>
                   <tr class="bg-[#0F121F] text-[11px] tracking-widest text-gray-400 uppercase">
                     <th class="px-4 py-3 text-left font-medium">Provider</th>
@@ -234,7 +248,14 @@
               <div aria-hidden="true" class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"></div>
               <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
               <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
-              <table class="w-full font-mono text-sm">
+              <table class="w-full table-fixed font-mono text-sm">
+                <colgroup>
+                  <col style="width: 10%" />
+                  <col style="width: 35%" />
+                  <col style="width: 10%" />
+                  <col style="width: 20%" />
+                  <col style="width: 25%" />
+                </colgroup>
                 <thead>
                   <tr class="bg-[#0F121F] text-[11px] tracking-widest text-gray-400 uppercase">
                     <th class="px-4 py-3 text-left font-medium">Provider</th>
@@ -389,14 +410,14 @@
             const summaryRange = `
               <tr class="summary-range ${rowCls}" ${toggleAttr}>
                 <td class="px-4 py-3 text-gray-500">${g.provider}</td>
-                <td class="px-4 py-3 text-gray-200">
+                <td class="px-4 py-3 text-white">
                   <span class="inline-flex items-center gap-2">
                     ${isMulti ? CHEV : CHEV_PLACEHOLDER}
                     ${g.arch}
                   </span>
                 </td>
-                <td class="px-4 py-3 text-right text-gray-300">${countRange(counts)}</td>
-                <td class="px-4 py-3 text-right text-gray-300">${memRange(mems)}</td>
+                <td class="px-4 py-3 text-right text-gray-500">${countRange(counts)}</td>
+                <td class="px-4 py-3 text-right text-gray-500">${memRange(mems)}</td>
                 <td class="px-4 py-3 text-right font-bold text-white">${priceRange(prices)}</td>
               </tr>
             `;
@@ -406,14 +427,14 @@
               ? `
               <tr class="summary-first ${rowCls}" ${toggleAttr}>
                 <td class="px-4 py-3 text-gray-500">${g.provider}</td>
-                <td class="px-4 py-3 text-gray-200">
+                <td class="px-4 py-3 text-white">
                   <span class="inline-flex items-center gap-2">
                     ${CHEV}
                     ${g.arch}
                   </span>
                 </td>
-                <td class="px-4 py-3 text-right text-gray-300">${first[2]}</td>
-                <td class="px-4 py-3 text-right text-gray-300">${first[3]}</td>
+                <td class="px-4 py-3 text-right text-gray-500">${first[2]}</td>
+                <td class="px-4 py-3 text-right text-gray-500">${first[3]}</td>
                 <td class="px-4 py-3 text-right font-bold text-white">${fmtPrice(first[4])}</td>
               </tr>
             `
@@ -425,11 +446,11 @@
                   .slice(1)
                   .map(
                     (r) => `
-                      <tr class="detail border-t border-dashed border-line/50 bg-page/40">
+                      <tr class="detail border-t border-dashed border-line/50 bg-page/40 transition-colors hover:bg-line/40">
                         <td class="px-4 py-2"></td>
-                        <td class="px-4 py-2 pl-9 text-gray-500">↳</td>
-                        <td class="px-4 py-2 text-right text-gray-300">${r[2]}</td>
-                        <td class="px-4 py-2 text-right text-gray-300">${r[3]}</td>
+                        <td class="px-4 py-2"></td>
+                        <td class="px-4 py-2 text-right text-gray-500">${r[2]}</td>
+                        <td class="px-4 py-2 text-right text-gray-500">${r[3]}</td>
                         <td class="px-4 py-2 text-right font-bold text-white">${fmtPrice(r[4])}</td>
                       </tr>
                     `
@@ -464,14 +485,14 @@
             const summaryRange = `
               <tr class="summary-range ${rowCls}" ${toggleAttr}>
                 <td class="px-4 py-3 text-gray-500">${g.provider}</td>
-                <td class="px-4 py-3 text-gray-200">
+                <td class="px-4 py-3 text-white">
                   <span class="inline-flex items-center gap-2">
                     ${isMulti ? CHEV : CHEV_PLACEHOLDER}
                     ${g.arch}
                   </span>
                 </td>
-                <td class="px-4 py-3 text-right text-gray-300">${topologyRange(topos)}</td>
-                <td class="px-4 py-3 text-right text-gray-300">${memRange(mems)}</td>
+                <td class="px-4 py-3 text-right text-gray-500">${topologyRange(topos)}</td>
+                <td class="px-4 py-3 text-right text-gray-500">${memRange(mems)}</td>
                 <td class="px-4 py-3 text-right font-bold text-white">${priceRange(prices)}</td>
               </tr>
             `;
@@ -480,14 +501,14 @@
               ? `
               <tr class="summary-first ${rowCls}" ${toggleAttr}>
                 <td class="px-4 py-3 text-gray-500">${g.provider}</td>
-                <td class="px-4 py-3 text-gray-200">
+                <td class="px-4 py-3 text-white">
                   <span class="inline-flex items-center gap-2">
                     ${CHEV}
                     ${g.arch}
                   </span>
                 </td>
-                <td class="px-4 py-3 text-right text-gray-300">${first[2]}</td>
-                <td class="px-4 py-3 text-right text-gray-300">${first[3]}</td>
+                <td class="px-4 py-3 text-right text-gray-500">${first[2]}</td>
+                <td class="px-4 py-3 text-right text-gray-500">${first[3]}</td>
                 <td class="px-4 py-3 text-right font-bold text-white">${fmtPrice(first[4])}</td>
               </tr>
             `
@@ -498,11 +519,11 @@
                   .slice(1)
                   .map(
                     (r) => `
-                      <tr class="detail border-t border-dashed border-line/50 bg-page/40">
+                      <tr class="detail border-t border-dashed border-line/50 bg-page/40 transition-colors hover:bg-line/40">
                         <td class="px-4 py-2"></td>
-                        <td class="px-4 py-2 pl-9 text-gray-500">↳</td>
-                        <td class="px-4 py-2 text-right text-gray-300">${r[2]}</td>
-                        <td class="px-4 py-2 text-right text-gray-300">${r[3]}</td>
+                        <td class="px-4 py-2"></td>
+                        <td class="px-4 py-2 text-right text-gray-500">${r[2]}</td>
+                        <td class="px-4 py-2 text-right text-gray-500">${r[3]}</td>
                         <td class="px-4 py-2 text-right font-bold text-white">${fmtPrice(r[4])}</td>
                       </tr>
                     `
