@@ -132,7 +132,7 @@
 
           <!-- CPU instances -->
           <div class="border-x border-dashed border-line">
-            <div class="bg-[radial-gradient(ellipse_45%_150%_at_0%_100%,rgb(16_185_129/0.28),rgb(16_185_129/0.12)_50%,rgb(16_185_129/0))] px-4 pt-8 pb-3">
+            <div class="bg-[radial-gradient(ellipse_45%_150%_at_0%_100%,rgb(16_185_129/0.8),rgb(16_185_129/0.35)_50%,rgb(16_185_129/0))] px-4 pt-8 pb-3">
               <h3 class="text-sm font-semibold tracking-widest text-emerald-400 uppercase">
                 CPU instances
               </h3>
@@ -186,7 +186,7 @@
               aria-hidden="true"
               class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
             ></div>
-            <div class="bg-[radial-gradient(ellipse_45%_150%_at_0%_100%,rgb(99_102_241/0.3),rgb(99_102_241/0.12)_50%,rgb(99_102_241/0))] px-4 pt-8 pb-3">
+            <div class="bg-[radial-gradient(ellipse_45%_150%_at_0%_100%,rgb(99_102_241/0.8),rgb(99_102_241/0.35)_50%,rgb(99_102_241/0))] px-4 pt-8 pb-3">
               <h3 class="text-sm font-semibold tracking-widest text-indigo-400 uppercase">
                 GPU instances
               </h3>
@@ -238,7 +238,7 @@
               aria-hidden="true"
               class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
             ></div>
-            <div class="bg-[radial-gradient(ellipse_45%_150%_at_0%_100%,rgb(249_115_22/0.28),rgb(249_115_22/0.12)_50%,rgb(249_115_22/0))] px-4 pt-8 pb-3">
+            <div class="bg-[radial-gradient(ellipse_45%_150%_at_0%_100%,rgb(249_115_22/0.8),rgb(249_115_22/0.35)_50%,rgb(249_115_22/0))] px-4 pt-8 pb-3">
               <h3 class="text-sm font-semibold tracking-widest text-orange-400 uppercase">
                 Accelerator instances
               </h3>
@@ -360,6 +360,12 @@
         return min === max ? fmtPrice(min) : `${fmtPrice(min)} – ${fmtPrice(max)}`;
       }
 
+      // For collapsed multi-item groups: "starting at $X.XX" (lead text dimmed).
+      function priceStartingAt(prices) {
+        const min = Math.min(...prices);
+        return `<span class="font-normal text-gray-500">starting at</span> ${fmtPrice(min)}`;
+      }
+
       function countRange(counts) {
         const min = Math.min(...counts);
         const max = Math.max(...counts);
@@ -418,7 +424,7 @@
                 </td>
                 <td class="px-4 py-3 text-right text-gray-500">${countRange(counts)}</td>
                 <td class="px-4 py-3 text-right text-gray-500">${memRange(mems)}</td>
-                <td class="px-4 py-3 text-right font-bold text-white">${priceRange(prices)}</td>
+                <td class="px-4 py-3 text-right font-bold text-white">${isMulti ? priceStartingAt(prices) : fmtPrice(prices[0])}</td>
               </tr>
             `;
 
@@ -493,7 +499,7 @@
                 </td>
                 <td class="px-4 py-3 text-right text-gray-500">${topologyRange(topos)}</td>
                 <td class="px-4 py-3 text-right text-gray-500">${memRange(mems)}</td>
-                <td class="px-4 py-3 text-right font-bold text-white">${priceRange(prices)}</td>
+                <td class="px-4 py-3 text-right font-bold text-white">${isMulti ? priceStartingAt(prices) : fmtPrice(prices[0])}</td>
               </tr>
             `;
 
