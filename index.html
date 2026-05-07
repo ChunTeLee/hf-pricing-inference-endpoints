@@ -146,16 +146,16 @@
               <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
               <table class="w-full table-fixed font-mono text-sm">
                 <colgroup>
-                  <col style="width: 10%" />
                   <col style="width: 35%" />
+                  <col style="width: 10%" />
                   <col style="width: 10%" />
                   <col style="width: 20%" />
                   <col style="width: 25%" />
                 </colgroup>
                 <thead>
                   <tr class="bg-[#0F121F] text-[11px] tracking-widest text-gray-400 uppercase">
-                    <th class="px-4 py-3 text-left font-medium">Provider</th>
                     <th class="px-4 py-3 text-left font-medium">Architecture</th>
+                    <th class="px-4 py-3 text-left font-medium">Provider</th>
                     <th class="px-4 py-3 text-right font-medium">vCPUs</th>
                     <th class="px-4 py-3 text-right font-medium">Memory</th>
                     <th class="px-4 py-3 text-right font-medium">Hourly Rate</th>
@@ -198,16 +198,16 @@
               <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
               <table class="w-full table-fixed font-mono text-sm">
                 <colgroup>
-                  <col style="width: 10%" />
                   <col style="width: 35%" />
+                  <col style="width: 10%" />
                   <col style="width: 10%" />
                   <col style="width: 20%" />
                   <col style="width: 25%" />
                 </colgroup>
                 <thead>
                   <tr class="bg-[#0F121F] text-[11px] tracking-widest text-gray-400 uppercase">
-                    <th class="px-4 py-3 text-left font-medium">Provider</th>
                     <th class="px-4 py-3 text-left font-medium">Architecture</th>
+                    <th class="px-4 py-3 text-left font-medium">Provider</th>
                     <th class="px-4 py-3 text-right font-medium">GPUs</th>
                     <th class="px-4 py-3 text-right font-medium">GPU Memory</th>
                     <th class="px-4 py-3 text-right font-medium">Hourly Rate</th>
@@ -250,16 +250,16 @@
               <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
               <table class="w-full table-fixed font-mono text-sm">
                 <colgroup>
-                  <col style="width: 10%" />
                   <col style="width: 35%" />
+                  <col style="width: 10%" />
                   <col style="width: 10%" />
                   <col style="width: 20%" />
                   <col style="width: 25%" />
                 </colgroup>
                 <thead>
                   <tr class="bg-[#0F121F] text-[11px] tracking-widest text-gray-400 uppercase">
-                    <th class="px-4 py-3 text-left font-medium">Provider</th>
                     <th class="px-4 py-3 text-left font-medium">Architecture</th>
+                    <th class="px-4 py-3 text-left font-medium">Provider</th>
                     <th class="px-4 py-3 text-right font-medium">Topology</th>
                     <th class="px-4 py-3 text-right font-medium">Accel. Memory</th>
                     <th class="px-4 py-3 text-right font-medium">Hourly Rate</th>
@@ -415,13 +415,13 @@
             // Shown when collapsed: range view of the whole group.
             const summaryRange = `
               <tr class="summary-range ${rowCls}" ${toggleAttr}>
-                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
                 <td class="px-4 py-3 text-white">
                   <span class="inline-flex items-center gap-2">
                     ${isMulti ? CHEV : CHEV_PLACEHOLDER}
                     ${g.arch}
                   </span>
                 </td>
+                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
                 <td class="px-4 py-3 text-right text-gray-500">${countRange(counts)}</td>
                 <td class="px-4 py-3 text-right text-gray-500">${memRange(mems)}</td>
                 <td class="px-4 py-3 text-right font-bold text-white">${isMulti ? priceStartingAt(prices) : fmtPrice(prices[0])}</td>
@@ -432,13 +432,13 @@
             const summaryFirst = isMulti
               ? `
               <tr class="summary-first ${rowCls}" ${toggleAttr}>
-                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
                 <td class="px-4 py-3 text-white">
                   <span class="inline-flex items-center gap-2">
                     ${CHEV}
                     ${g.arch}
                   </span>
                 </td>
+                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
                 <td class="px-4 py-3 text-right text-gray-500">${first[2]}</td>
                 <td class="px-4 py-3 text-right text-gray-500">${first[3]}</td>
                 <td class="px-4 py-3 text-right font-bold text-white">${fmtPrice(first[4])}</td>
@@ -490,13 +490,13 @@
 
             const summaryRange = `
               <tr class="summary-range ${rowCls}" ${toggleAttr}>
-                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
                 <td class="px-4 py-3 text-white">
                   <span class="inline-flex items-center gap-2">
                     ${isMulti ? CHEV : CHEV_PLACEHOLDER}
                     ${g.arch}
                   </span>
                 </td>
+                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
                 <td class="px-4 py-3 text-right text-gray-500">${topologyRange(topos)}</td>
                 <td class="px-4 py-3 text-right text-gray-500">${memRange(mems)}</td>
                 <td class="px-4 py-3 text-right font-bold text-white">${isMulti ? priceStartingAt(prices) : fmtPrice(prices[0])}</td>
@@ -506,13 +506,13 @@
             const summaryFirst = isMulti
               ? `
               <tr class="summary-first ${rowCls}" ${toggleAttr}>
-                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
                 <td class="px-4 py-3 text-white">
                   <span class="inline-flex items-center gap-2">
                     ${CHEV}
                     ${g.arch}
                   </span>
                 </td>
+                <td class="px-4 py-3 text-gray-500">${g.provider}</td>
                 <td class="px-4 py-3 text-right text-gray-500">${first[2]}</td>
                 <td class="px-4 py-3 text-right text-gray-500">${first[3]}</td>
                 <td class="px-4 py-3 text-right font-bold text-white">${fmtPrice(first[4])}</td>
