@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inference Endpoints — pricing section mock</title>
+    <title>Hugging Face Pricing — mock</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -55,93 +55,262 @@
       tbody[data-expanded="true"] tr.summary-range {
         display: none;
       }
-      /* Match live page: all cells use px-4 py-3, no special first/last padding.
-         The table fills the inner frame; row dividers extend edge-to-edge. */
     </style>
   </head>
   <body class="bg-page text-white">
-    <section>
-      <!-- Outer frame: vertical dashed lines at the section/page edge -->
-      <div class="mx-auto max-w-7xl border-x border-dashed border-line">
-        <!-- Inner padding so the stubs (size-5 = 20px) bridge exactly to the inner frame -->
-        <div class="px-5 py-10">
-        <!-- Header block: inner frame, vertical dashed sides only -->
-        <div class="border-x border-dashed border-line p-8 sm:p-10 lg:p-14">
-          <div class="mb-8 flex items-center justify-between gap-2">
-            <span
-              class="inline-block rounded-full bg-indigo-600/10 px-4 py-1 text-sm font-semibold text-indigo-500"
-              >Inference Endpoints</span
-            >
-            <a
-              href="https://endpoints.huggingface.co"
-              target="_blank"
-              rel="noopener"
-              class="inline-block rounded-full bg-white px-3 py-1.5 text-sm text-black hover:bg-gray-100"
-              ><span class="mr-1.5">→</span> Learn more</a
-            >
+    <!-- ============================================================ -->
+    <!-- Outer page wrapper: max-w-7xl + dashed vertical frame.       -->
+    <!-- All sections stack inside; section dividers are border-t.   -->
+    <!-- ============================================================ -->
+    <div class="mx-auto max-w-7xl border-x border-dashed border-line">
+
+      <!-- ========================================================== -->
+      <!-- HERO: Leveling up AI collaboration and compute.            -->
+      <!-- ========================================================== -->
+      <section id="hero" class="px-5 py-16 sm:px-10 lg:px-16 lg:py-24">
+        <h1 class="mx-auto max-w-3xl text-balance text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+          Leveling up AI collaboration<br />and compute.
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-balance text-center text-lg text-gray-400">
+          Give your personal account or your organization the most advanced platform to build AI.
+        </p>
+
+        <!-- 3-tier plan cards -->
+        <div class="mt-14 grid gap-6 md:grid-cols-3">
+          <!-- PRO Account -->
+          <article class="flex flex-col rounded-2xl border border-line bg-page p-7">
+            <div class="mb-2 flex items-center gap-2">
+              <span class="inline-flex items-center rounded-md bg-amber-400/10 px-2 py-0.5 text-xs font-semibold text-amber-400">PRO</span>
+              <h3 class="text-lg font-semibold text-white">PRO Account</h3>
+            </div>
+            <p class="text-sm text-gray-400">Boost your personal HF experience</p>
+            <div class="mt-6">
+              <span class="text-4xl font-bold text-white">$9</span>
+              <span class="text-sm text-gray-400">/month</span>
+            </div>
+            <a href="#" class="mt-6 block rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-emerald-400 p-px">
+              <span class="block rounded-full bg-page px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-line/40">Get Pro</span>
+            </a>
+            <ul class="mt-7 space-y-3 text-sm text-gray-300">
+              <li class="flex gap-2"><span class="text-emerald-400">✓</span> 10× private storage capacity</li>
+              <li class="flex gap-2"><span class="text-emerald-400">✓</span> 2× public storage capacity</li>
+              <li class="flex gap-2"><span class="text-emerald-400">✓</span> 20× included inference credits</li>
+              <li class="flex gap-2"><span class="text-emerald-400">✓</span> 8× ZeroGPU quota and highest queue priority</li>
+              <li class="flex gap-2"><span class="text-emerald-400">✓</span> Spaces Dev Mode & ZeroGPU Spaces hosting</li>
+              <li class="flex gap-2"><span class="text-emerald-400">✓</span> Personal blog publishing</li>
+              <li class="flex gap-2"><span class="text-emerald-400">✓</span> Dataset Viewer for private datasets</li>
+              <li class="flex gap-2"><span class="text-emerald-400">✓</span> Show your support with a PRO badge</li>
+            </ul>
+          </article>
+
+          <!-- Team — Most popular -->
+          <article class="relative flex flex-col rounded-2xl border border-indigo-500/40 bg-page p-7 ring-1 ring-indigo-500/20">
+            <div class="mb-2 flex items-center gap-2">
+              <h3 class="text-lg font-semibold text-white">Team</h3>
+              <span class="inline-flex items-center rounded-full bg-amber-400/15 px-2.5 py-0.5 text-xs font-semibold text-amber-400">Most popular</span>
+            </div>
+            <p class="text-sm text-gray-400">Instant setup for growing teams</p>
+            <div class="mt-6">
+              <span class="text-4xl font-bold text-white">$20</span>
+              <span class="text-sm text-gray-400">/month per user</span>
+            </div>
+            <a href="#" class="mt-6 block rounded-full bg-white px-5 py-2.5 text-center text-sm font-semibold text-black hover:bg-gray-100">Get Team (via credit card)</a>
+            <ul class="mt-7 space-y-3 text-sm text-gray-300">
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> SSO support (SAML & OIDC)</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Data location control with Storage Regions</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Detailed action reviews with Audit Logs</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Granular access control via Resource Groups</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Repository usage Analytics</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Advanced auth policies and visibility controls</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Centralized token control and approvals</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Dataset Viewer for private datasets</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Advanced compute options for Spaces</li>
+              <li class="flex gap-2"><span class="mt-1 inline-block size-1.5 shrink-0 rounded-full bg-indigo-400"></span> All organization members get ZeroGPU and Inference Providers PRO benefits</li>
+            </ul>
+          </article>
+
+          <!-- Enterprise -->
+          <article class="flex flex-col rounded-2xl border border-line bg-page p-7">
+            <div class="mb-2 flex items-center gap-2">
+              <h3 class="text-lg font-semibold text-white">Enterprise</h3>
+            </div>
+            <p class="text-sm text-gray-400">Custom onboarding and enterprise features</p>
+            <div class="mt-6">
+              <span class="text-4xl font-bold text-white">$50</span>
+              <span class="text-sm text-gray-400">/month per user</span>
+            </div>
+            <a href="#" class="mt-6 block rounded-full bg-white px-5 py-2.5 text-center text-sm font-semibold text-black hover:bg-gray-100">Talk to sales</a>
+            <ul class="mt-7 space-y-3 text-sm text-gray-300">
+              <li class="flex gap-2"><span class="mt-1 inline-block size-1.5 shrink-0 rounded-full bg-indigo-400"></span> All benefits from the Team plan</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Highest storage, bandwidth, and API rate limits</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Automated user management with SCIM provisioning</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Advanced security and access controls</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Managed billing with annual commitments</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Legal and Compliance processes</li>
+              <li class="flex gap-2"><span class="text-indigo-400">✓</span> Dedicated support</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="mt-12 text-center text-sm text-gray-400">
+          Need support to adopt the HF Hub in your organization? View our
+          <a href="#" class="font-semibold text-white underline-offset-4 hover:underline">🤗 Enterprise Support</a>.
+        </p>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- STORAGE — placeholder per spec.                            -->
+      <!-- ========================================================== -->
+      <section id="storage" class="border-t border-dashed border-line px-5 py-16 sm:px-10 lg:px-16 lg:py-24">
+        <span class="inline-block rounded-full bg-blue-600/10 px-4 py-1 text-sm font-semibold text-blue-500">Storage</span>
+        <h2 class="mt-4 text-balance text-3xl font-bold text-white md:text-4xl">Transparent, volume-based pricing.</h2>
+        <p class="mt-4 max-w-3xl text-lg text-gray-400">
+          Store your AI models, datasets, Spaces, and Buckets with simple per-TB pricing.
+        </p>
+        <div class="mt-10 rounded-2xl border border-dashed border-line bg-line/10 px-8 py-16 text-center">
+          <p class="text-sm uppercase tracking-widest text-gray-500">Section placeholder</p>
+          <p class="mt-2 text-base text-gray-400">Storage pricing tiers coming soon.</p>
+        </div>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- HUB — Explore, experiment, collaborate.                    -->
+      <!-- ========================================================== -->
+      <section id="hub" class="border-t border-dashed border-line px-5 py-16 sm:px-10 lg:px-16 lg:py-24">
+        <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+          <div>
+            <span class="inline-block rounded-full bg-amber-600/10 px-4 py-1 text-sm font-semibold text-amber-500">🤗 Hub</span>
+            <h2 class="mt-4 max-w-3xl text-balance text-3xl font-bold text-white md:text-4xl">
+              Explore, experiment, collaborate and build technology with Machine Learning.
+            </h2>
           </div>
-          <h2
-            class="mb-4 text-balance text-3xl font-bold text-white md:text-4xl"
-          >
+          <a href="#" class="inline-block whitespace-nowrap rounded-full bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-gray-100">
+            <span class="mr-1">→</span> Sign Up
+          </a>
+        </div>
+        <p class="mt-6 max-w-3xl text-lg text-gray-400">
+          The HF Hub is the central place to explore, experiment, collaborate and build technology with Machine Learning. Join the open source Machine Learning movement!
+        </p>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <div class="mb-3 text-2xl">🧪</div>
+            <h3 class="text-base font-semibold text-white">Create with ML</h3>
+            <p class="mt-2 text-sm text-gray-400">Packed with ML features, like model eval, dataset viewer and much more.</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <div class="mb-3 text-2xl">🤝</div>
+            <h3 class="text-base font-semibold text-white">Collaborate</h3>
+            <p class="mt-2 text-sm text-gray-400">Git based and designed for collaboration at its core.</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <div class="mb-3 text-2xl">🎓</div>
+            <h3 class="text-base font-semibold text-white">Play and learn</h3>
+            <p class="mt-2 text-sm text-gray-400">Learn by experimenting and sharing with our awesome community.</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <div class="mb-3 text-2xl">📁</div>
+            <h3 class="text-base font-semibold text-white">Build your ML portfolio</h3>
+            <p class="mt-2 text-sm text-gray-400">Share your work with the world and build your own ML profile.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- SPACES HARDWARE — flat table of GPU offerings.             -->
+      <!-- ========================================================== -->
+      <section id="spaces-hardware" class="border-t border-dashed border-line">
+        <div class="px-5 py-12 sm:px-10 lg:px-16 lg:py-20">
+          <div class="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+            <span class="inline-block rounded-full bg-purple-600/10 px-4 py-1 text-sm font-semibold text-purple-400">Spaces Hardware</span>
+            <a href="#" class="inline-block rounded-full bg-white px-3 py-1.5 text-sm text-black hover:bg-gray-100">
+              <span class="mr-1.5">→</span> Get started with Spaces
+            </a>
+          </div>
+          <h2 class="mb-4 text-balance text-3xl font-bold text-white md:text-4xl">
+            On-demand GPU hardware. Starting at $0.
+          </h2>
+          <p class="max-w-3xl text-lg text-gray-400">
+            Spaces are one of the most popular ways to share ML applications and demos with the world. Upgrade your Spaces with our selection of custom on-demand hardware.
+          </p>
+        </div>
+
+        <!-- Flat hardware table with same corner+stub treatment as Inference Endpoints -->
+        <div class="relative border-y border-dashed border-line">
+          <!-- Extension stubs at top/bottom -->
+          <div aria-hidden="true" class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"></div>
+          <div aria-hidden="true" class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"></div>
+          <div aria-hidden="true" class="absolute bottom-0 left-0 size-5 -translate-x-full translate-y-px border-b border-dashed border-line"></div>
+          <div aria-hidden="true" class="absolute right-0 bottom-0 size-5 translate-x-full translate-y-px border-b border-dashed border-line"></div>
+          <!-- Corner circles -->
+          <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+          <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+          <div aria-hidden="true" class="absolute -bottom-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+          <div aria-hidden="true" class="absolute -right-[3.5px] -bottom-[4.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+
+          <table class="w-full table-fixed font-mono text-sm">
+            <colgroup>
+              <col style="width: 28%" />
+              <col style="width: 14%" />
+              <col style="width: 14%" />
+              <col style="width: 18%" />
+              <col style="width: 12%" />
+              <col style="width: 14%" />
+            </colgroup>
+            <thead>
+              <tr class="bg-[#0F121F] text-[11px] tracking-widest text-gray-400 uppercase">
+                <th class="px-4 py-3 text-left font-medium">Name</th>
+                <th class="px-4 py-3 text-right font-medium">CPU</th>
+                <th class="px-4 py-3 text-right font-medium">Memory</th>
+                <th class="px-4 py-3 text-right font-medium">Accelerator</th>
+                <th class="px-4 py-3 text-right font-medium">VRAM</th>
+                <th class="px-4 py-3 text-right font-medium">Hourly Price</th>
+              </tr>
+            </thead>
+            <tbody id="spaces-hardware-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- INFERENCE ENDPOINTS — full collapsible table.              -->
+      <!-- ========================================================== -->
+      <section id="inference-endpoints" class="border-t border-dashed border-line">
+        <!-- Header block: vertical dashed sides only -->
+        <div class="p-8 sm:p-10 lg:p-14">
+          <div class="mb-8 flex items-center justify-between gap-2">
+            <span class="inline-block rounded-full bg-indigo-600/10 px-4 py-1 text-sm font-semibold text-indigo-500">Inference Endpoints</span>
+            <a href="https://endpoints.huggingface.co" target="_blank" rel="noopener" class="inline-block rounded-full bg-white px-3 py-1.5 text-sm text-black hover:bg-gray-100">
+              <span class="mr-1.5">→</span> Learn more
+            </a>
+          </div>
+          <h2 class="mb-4 text-balance text-3xl font-bold text-white md:text-4xl">
             Dedicated inference, starting at $0.033/hour.
           </h2>
           <p class="max-w-3xl text-lg text-gray-400">
-            Deploy any ML model on dedicated and autoscaling infrastructure,
-            right from the HF Hub. Secure, production-ready, with no cold
-            starts.
+            Deploy any ML model on dedicated and autoscaling infrastructure, right from the HF Hub. Secure, production-ready, with no cold starts.
           </p>
         </div>
 
         <!-- Tables wrapper: horizontal dashed top/bottom + corners + extension stubs -->
         <div class="relative border-y border-dashed border-line">
-          <!-- 4 horizontal extension stubs that extend the dashed line out to the section edge -->
-          <div
-            aria-hidden="true"
-            class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"
-          ></div>
-          <div
-            aria-hidden="true"
-            class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"
-          ></div>
-          <div
-            aria-hidden="true"
-            class="absolute bottom-0 left-0 size-5 -translate-x-full translate-y-px border-b border-dashed border-line"
-          ></div>
-          <div
-            aria-hidden="true"
-            class="absolute right-0 bottom-0 size-5 translate-x-full translate-y-px border-b border-dashed border-line"
-          ></div>
-
-          <!-- 4 corner circles: bg matches page so they "punch through" the dashed line at the intersection -->
-          <div
-            aria-hidden="true"
-            class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
-          ></div>
-          <div
-            aria-hidden="true"
-            class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
-          ></div>
-          <div
-            aria-hidden="true"
-            class="absolute -bottom-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
-          ></div>
-          <div
-            aria-hidden="true"
-            class="absolute -right-[3.5px] -bottom-[4.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
-          ></div>
+          <div aria-hidden="true" class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"></div>
+          <div aria-hidden="true" class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"></div>
+          <div aria-hidden="true" class="absolute bottom-0 left-0 size-5 -translate-x-full translate-y-px border-b border-dashed border-line"></div>
+          <div aria-hidden="true" class="absolute right-0 bottom-0 size-5 translate-x-full translate-y-px border-b border-dashed border-line"></div>
+          <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+          <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+          <div aria-hidden="true" class="absolute -bottom-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+          <div aria-hidden="true" class="absolute -right-[3.5px] -bottom-[4.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
 
           <!-- CPU instances -->
           <div class="border-x border-dashed border-line">
             <div class="bg-[radial-gradient(ellipse_45%_150%_at_0%_100%,rgb(16_185_129/0.15),rgb(16_185_129/0.06)_50%,rgb(16_185_129/0))] px-4 pt-8 pb-3">
-              <h3 class="text-sm font-semibold tracking-widest text-emerald-400 uppercase">
-                CPU instances
-              </h3>
+              <h3 class="text-sm font-semibold tracking-widest text-emerald-400 uppercase">CPU instances</h3>
             </div>
             <div class="relative border-t border-dashed border-line pb-6">
-              <!-- Stubs bridging the title↔column-headers divider out to the outer frame -->
               <div aria-hidden="true" class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"></div>
               <div aria-hidden="true" class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"></div>
-              <!-- Circle markers at the inner-frame intersections -->
               <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
               <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
               <table class="w-full table-fixed font-mono text-sm">
@@ -168,28 +337,12 @@
 
           <!-- GPU instances -->
           <div class="relative border-x border-t border-dashed border-line">
-            <!-- Inter-section divider stubs that bridge to the outer frame -->
-            <div
-              aria-hidden="true"
-              class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"
-            ></div>
-            <div
-              aria-hidden="true"
-              class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"
-            ></div>
-            <!-- Circle markers at the inner-frame intersections -->
-            <div
-              aria-hidden="true"
-              class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
-            ></div>
-            <div
-              aria-hidden="true"
-              class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
-            ></div>
+            <div aria-hidden="true" class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"></div>
+            <div aria-hidden="true" class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"></div>
+            <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+            <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
             <div class="bg-[radial-gradient(ellipse_45%_150%_at_0%_100%,rgb(99_102_241/0.15),rgb(99_102_241/0.06)_50%,rgb(99_102_241/0))] px-4 pt-8 pb-3">
-              <h3 class="text-sm font-semibold tracking-widest text-indigo-400 uppercase">
-                GPU instances
-              </h3>
+              <h3 class="text-sm font-semibold tracking-widest text-indigo-400 uppercase">GPU instances</h3>
             </div>
             <div class="relative border-t border-dashed border-line pb-6">
               <div aria-hidden="true" class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"></div>
@@ -220,28 +373,12 @@
 
           <!-- Accelerator instances -->
           <div class="relative border-x border-t border-dashed border-line">
-            <!-- Inter-section divider stubs that bridge to the outer frame -->
-            <div
-              aria-hidden="true"
-              class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"
-            ></div>
-            <div
-              aria-hidden="true"
-              class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"
-            ></div>
-            <!-- Circle markers at the inner-frame intersections -->
-            <div
-              aria-hidden="true"
-              class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
-            ></div>
-            <div
-              aria-hidden="true"
-              class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"
-            ></div>
+            <div aria-hidden="true" class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"></div>
+            <div aria-hidden="true" class="absolute top-0 right-0 size-5 -translate-y-px translate-x-full border-t border-dashed border-line"></div>
+            <div aria-hidden="true" class="absolute -top-[4.5px] -left-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
+            <div aria-hidden="true" class="absolute -top-[4.5px] -right-[3.5px] z-10 size-2 rotate-45 rounded-full border border-line bg-page"></div>
             <div class="bg-[radial-gradient(ellipse_45%_150%_at_0%_100%,rgb(249_115_22/0.15),rgb(249_115_22/0.06)_50%,rgb(249_115_22/0))] px-4 pt-8 pb-3">
-              <h3 class="text-sm font-semibold tracking-widest text-orange-400 uppercase">
-                Accelerator instances
-              </h3>
+              <h3 class="text-sm font-semibold tracking-widest text-orange-400 uppercase">Accelerator instances</h3>
             </div>
             <div class="relative border-t border-dashed border-line pb-10">
               <div aria-hidden="true" class="absolute top-0 left-0 size-5 -translate-x-full -translate-y-px border-t border-dashed border-line"></div>
@@ -270,12 +407,115 @@
             </div>
           </div>
         </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
+      <!-- ========================================================== -->
+      <!-- JOIN PRO MEMBERS — feature grid + CTA.                     -->
+      <!-- ========================================================== -->
+      <section id="join-pro" class="border-t border-dashed border-line px-5 py-16 sm:px-10 lg:px-16 lg:py-24">
+        <div class="text-center">
+          <span class="inline-flex items-center rounded-md bg-amber-400/10 px-2 py-0.5 text-xs font-semibold tracking-widest text-amber-400 uppercase">PRO</span>
+          <h2 class="mt-4 text-balance text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+            Join 35k+ PRO members
+          </h2>
+          <p class="mt-4 text-lg text-gray-400">
+            Upgrade your HF experience for <span class="text-white">$9/month</span>.
+          </p>
+          <a href="#" class="mt-8 inline-block rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-emerald-400 p-px">
+            <span class="block rounded-full bg-page px-8 py-3 text-sm font-semibold text-white hover:bg-line/40">Get Pro</span>
+          </a>
+        </div>
+
+        <div class="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <h3 class="text-sm font-semibold tracking-widest text-amber-400 uppercase">Private storage</h3>
+            <p class="mt-3 text-base text-gray-200">10× private storage capacity</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <h3 class="text-sm font-semibold tracking-widest text-amber-400 uppercase">Public storage</h3>
+            <p class="mt-3 text-base text-gray-200">2× public storage capacity</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <h3 class="text-sm font-semibold tracking-widest text-amber-400 uppercase">Inference Providers</h3>
+            <p class="mt-3 text-base text-gray-200">20× included inference credits</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <h3 class="text-sm font-semibold tracking-widest text-amber-400 uppercase">ZeroGPU</h3>
+            <p class="mt-3 text-base text-gray-200">8× ZeroGPU quota and highest queue priority</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <h3 class="text-sm font-semibold tracking-widest text-amber-400 uppercase">Spaces Dev Mode</h3>
+            <p class="mt-3 text-base text-gray-200">Fast iterations via SSH/VS Code and ZeroGPU Spaces hosting</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <h3 class="text-sm font-semibold tracking-widest text-amber-400 uppercase">Blog</h3>
+            <p class="mt-3 text-base text-gray-200">Personal blog publishing</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <h3 class="text-sm font-semibold tracking-widest text-amber-400 uppercase">Dataset Viewer</h3>
+            <p class="mt-3 text-base text-gray-200">for private datasets</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <h3 class="text-sm font-semibold tracking-widest text-amber-400 uppercase">Features Preview</h3>
+            <p class="mt-3 text-base text-gray-200">Get early access to upcoming features</p>
+          </article>
+          <article class="rounded-2xl border border-line bg-page p-6">
+            <h3 class="text-sm font-semibold tracking-widest text-amber-400 uppercase">PRO Badge</h3>
+            <p class="mt-3 text-base text-gray-200">Show your support with a PRO badge</p>
+          </article>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- DATA + RENDER LOGIC                                          -->
+    <!-- ============================================================ -->
     <script>
-      // Source data — flat lists, then grouped by (provider, architecture).
+      // ---- Spaces Hardware (flat list) ----
+      const spacesHardware = [
+        // [name, cpu, memory, accelerator, vram, price, isGpu]
+        ["CPU Basic", "2 vCPU", "16 GB", "-", "-", "FREE", false],
+        ["CPU Upgrade", "8 vCPU", "32 GB", "-", "-", "$0.03", false],
+        ["Nvidia T4 - small", "4 vCPU", "15 GB", "Nvidia T4", "16 GB", "$0.40", true],
+        ["Nvidia T4 - medium", "8 vCPU", "30 GB", "Nvidia T4", "16 GB", "$0.60", true],
+        ["1x Nvidia L4", "8 vCPU", "30 GB", "Nvidia L4", "24 GB", "$0.80", true],
+        ["4x Nvidia L4", "48 vCPU", "186 GB", "Nvidia L4", "96 GB", "$3.80", true],
+        ["1x Nvidia L40S", "8 vCPU", "62 GB", "Nvidia L40S", "48 GB", "$1.80", true],
+        ["4x Nvidia L40S", "48 vCPU", "382 GB", "Nvidia L40S", "192 GB", "$8.30", true],
+        ["8x Nvidia L40S", "192 vCPU", "1534 GB", "Nvidia L40S", "384 GB", "$23.50", true],
+        ["Nvidia A10G - small", "4 vCPU", "15 GB", "Nvidia A10G", "24 GB", "$1.00", true],
+        ["Nvidia A10G - large", "12 vCPU", "46 GB", "Nvidia A10G", "24 GB", "$1.50", true],
+        ["2x Nvidia A10G - large", "24 vCPU", "92 GB", "Nvidia A10G", "48 GB", "$3.00", true],
+        ["4x Nvidia A10G - large", "48 vCPU", "184 GB", "Nvidia A10G", "96 GB", "$5.00", true],
+        ["Nvidia A100 - large", "12 vCPU", "142 GB", "Nvidia A100", "80 GB", "$2.50", true],
+        ["4x Nvidia A100", "48 vCPU", "568 GB", "Nvidia A100", "320 GB", "$10.00", true],
+        ["8x Nvidia A100", "96 vCPU", "1136 GB", "Nvidia A100", "640 GB", "$20.00", true],
+        ["Custom", "on demand", "on demand", "on demand", "on demand", "on demand", false],
+        ["ZeroGPU", "dynamic", "dynamic", "Nvidia H200", "70 GB", "FREE", true],
+      ];
+
+      const NVIDIA_LEAF = `<svg class="mr-2 inline-block size-3.5 text-emerald-400" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.97 5.87v-.96c.09-.01.19-.01.28-.02 2.55-.16 4.22 2.13 4.33 2.25 0 0-1.85 2.57-3.84 2.57-.27 0-.53-.04-.77-.12V6.77c1.02.12 1.22.57 1.83 1.59l1.37-1.15s-1-1.31-2.69-1.31a3.97 3.97 0 0 0-.51.03zm0-3.18v1.43l.28-.02c3.55-.12 5.87 2.92 5.87 2.92s-2.66 3.23-5.42 3.23c-.25 0-.49-.02-.73-.07v.89c.2.03.4.04.61.04 2.57 0 4.42-1.31 6.22-2.86.3.24 1.52.82 1.77.99-1.71 1.43-5.7 2.58-7.95 2.58-.22 0-.43-.01-.64-.03v1.25h9.84V2.69H5.97zm0 6.93v.7c-2.38-.42-3.04-2.9-3.04-2.9s1.14-1.26 3.04-1.47v.77h-.01c-1-.12-1.78.81-1.78.81s.44 1.57 1.79 2.09zM1.7 7.31s1.41-2.09 4.27-2.31v-.76C2.8 4.5.06 7.17.06 7.17s1.55 4.48 5.91 4.89v-.81C2.77 11.85 1.7 7.31 1.7 7.31z"/></svg>`;
+
+      function renderSpacesHardware() {
+        const tbody = document.getElementById("spaces-hardware-tbody");
+        tbody.innerHTML = spacesHardware
+          .map(
+            ([name, cpu, mem, accel, vram, price, isGpu]) => `
+            <tr class="border-t border-dashed border-line transition-colors hover:bg-line/40">
+              <td class="px-4 py-3 text-white">${isGpu ? NVIDIA_LEAF : ""}${name}</td>
+              <td class="px-4 py-3 text-right text-gray-500">${cpu}</td>
+              <td class="px-4 py-3 text-right text-gray-500">${mem}</td>
+              <td class="px-4 py-3 text-right text-gray-500">${accel}</td>
+              <td class="px-4 py-3 text-right text-gray-500">${vram}</td>
+              <td class="px-4 py-3 text-right font-bold text-white">${price}</td>
+            </tr>
+          `,
+          )
+          .join("");
+      }
+
+      // ---- Inference Endpoints data ----
       const cpuRows = [
         ["aws", "Intel Sapphire Rapids", 1, "2GB", 0.03],
         ["aws", "Intel Sapphire Rapids", 2, "4GB", 0.07],
@@ -292,7 +532,6 @@
         ["gcp", "Intel Sapphire Rapids", 4, "8GB", 0.20],
         ["gcp", "Intel Sapphire Rapids", 8, "16GB", 0.40],
       ];
-
       const gpuRows = [
         ["aws", "NVIDIA T4", 1, "14GB", 0.50],
         ["aws", "NVIDIA T4", 4, "56GB", 3.00],
@@ -331,7 +570,6 @@
         ["gcp", "NVIDIA H100", 4, "320GB", 40.00],
         ["gcp", "NVIDIA H100", 8, "640GB", 80.00],
       ];
-
       const accelRows = [
         ["aws", "Inf2 Neuron", "x1", "14.5GB", 0.75],
         ["aws", "Inf2 Neuron", "x1-large", "124GB", 1.95],
@@ -341,7 +579,6 @@
         ["gcp", "TPU v5e", "2x4", "128GB", 9.50],
       ];
 
-      // ----- helpers -----
       const fmtPrice = (n) => `$${n.toFixed(2)}`;
       const memNum = (s) => parseFloat(s);
       const memUnit = (s) => s.replace(/[\d.]/g, "");
@@ -353,31 +590,19 @@
         const unit = memUnit(memStrings[0]);
         return min === max ? `${min}${unit}` : `${min}–${max}${unit}`;
       }
-
-      function priceRange(prices) {
-        const min = Math.min(...prices);
-        const max = Math.max(...prices);
-        return min === max ? fmtPrice(min) : `${fmtPrice(min)} – ${fmtPrice(max)}`;
-      }
-
-      // For collapsed multi-item groups: "starting at $X.XX" (lead text dimmed).
-      function priceStartingAt(prices) {
-        const min = Math.min(...prices);
-        return `<span class="font-normal text-gray-500">starting at</span> ${fmtPrice(min)}`;
-      }
-
       function countRange(counts) {
         const min = Math.min(...counts);
         const max = Math.max(...counts);
         return min === max ? `${min}` : `${min}–${max}`;
       }
-
       function topologyRange(topos) {
         if (topos.length === 1) return topos[0];
         return `${topos[0]} – ${topos[topos.length - 1]}`;
       }
-
-      // Group flat rows into [{provider, arch, items: [...]}] preserving input order.
+      function priceStartingAt(prices) {
+        const min = Math.min(...prices);
+        return `<span class="font-normal text-gray-500">starting at</span> ${fmtPrice(min)}`;
+      }
       function group(rows) {
         const out = [];
         const idx = new Map();
@@ -392,12 +617,10 @@
         return out;
       }
 
-      // ----- renderers -----
       const CHEV = `<svg class="chev h-3 w-3 text-gray-500 transition-transform" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M4 2l4 4-4 4z"/></svg>`;
       const CHEV_PLACEHOLDER = `<span class="inline-block h-3 w-3"></span>`;
 
       function renderNumericTable(tbody, rows) {
-        // rows shape: [provider, arch, count, mem, price]
         const groups = group(rows);
         const html = groups
           .map((g, gi) => {
@@ -407,12 +630,9 @@
             const isMulti = g.items.length > 1;
             const first = g.items[0];
 
-            const rowCls = `border-t border-dashed border-line ${
-              isMulti ? "cursor-pointer transition-colors hover:bg-line/40" : ""
-            }`;
+            const rowCls = `border-t border-dashed border-line ${isMulti ? "cursor-pointer transition-colors hover:bg-line/40" : ""}`;
             const toggleAttr = isMulti ? `data-toggle="${gi}"` : "";
 
-            // Shown when collapsed: range view of the whole group.
             const summaryRange = `
               <tr class="summary-range ${rowCls}" ${toggleAttr}>
                 <td class="px-4 py-3 text-white">
@@ -428,7 +648,6 @@
               </tr>
             `;
 
-            // Shown when expanded: replaces the range row with the first item's actual values.
             const summaryFirst = isMulti
               ? `
               <tr class="summary-first ${rowCls}" ${toggleAttr}>
@@ -446,7 +665,6 @@
             `
               : "";
 
-            // Detail rows for items 2..N (the first item is now in summary-first).
             const details = isMulti
               ? g.items
                   .slice(1)
@@ -459,7 +677,7 @@
                         <td class="px-4 py-2 text-right text-gray-500">${r[3]}</td>
                         <td class="px-4 py-2 text-right font-bold text-white">${fmtPrice(r[4])}</td>
                       </tr>
-                    `
+                    `,
                   )
                   .join("")
               : "";
@@ -468,12 +686,10 @@
           })
           .join("");
 
-        // Replace the placeholder tbody with the rendered groups
         tbody.outerHTML = html;
       }
 
       function renderAccelTable(tbody, rows) {
-        // rows shape: [provider, arch, topology, mem, price]
         const groups = group(rows);
         const html = groups
           .map((g, gi) => {
@@ -483,9 +699,7 @@
             const isMulti = g.items.length > 1;
             const first = g.items[0];
 
-            const rowCls = `border-t border-dashed border-line ${
-              isMulti ? "cursor-pointer transition-colors hover:bg-line/40" : ""
-            }`;
+            const rowCls = `border-t border-dashed border-line ${isMulti ? "cursor-pointer transition-colors hover:bg-line/40" : ""}`;
             const toggleAttr = isMulti ? `data-toggle="a${gi}"` : "";
 
             const summaryRange = `
@@ -532,7 +746,7 @@
                         <td class="px-4 py-2 text-right text-gray-500">${r[3]}</td>
                         <td class="px-4 py-2 text-right font-bold text-white">${fmtPrice(r[4])}</td>
                       </tr>
-                    `
+                    `,
                   )
                   .join("")
               : "";
@@ -545,6 +759,7 @@
       }
 
       // Bootstrap
+      renderSpacesHardware();
       renderNumericTable(document.getElementById("cpu-tbody"), cpuRows);
       renderNumericTable(document.getElementById("gpu-tbody"), gpuRows);
       renderAccelTable(document.getElementById("accel-tbody"), accelRows);
