@@ -169,6 +169,14 @@ final_html = f"""<!doctype html>
          (e.g. `:where(.bg-white):is(.dark *) {{ ... #0B0F19 ... }}`).
          Do NOT add Tailwind CDN — it would inject conflicting rules. -->
     <link rel="stylesheet" href="./style.css" />
+    <!-- Google Fonts: Source Sans Pro (200/300/400/600/700) and IBM
+         Plex Mono. Critical — the compiled style.css only defines the
+         italic 900 weight; everything else (regular, semibold, bold)
+         lives in these Google-hosted @font-face declarations. Without
+         them the browser font-synthesizes bold from the regular weight
+         and the page looks visibly off. -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
     <style>
       /* --------------------------------------------------------------
          Custom utilities for the Inference Endpoints redesign.

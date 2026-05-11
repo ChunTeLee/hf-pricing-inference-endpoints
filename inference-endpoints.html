@@ -65,31 +65,31 @@
       <div class="mx-auto max-w-7xl border-x border-dashed border-line">
         <!-- Inner padding so the stubs (size-5 = 20px) bridge exactly to the inner frame -->
         <div class="px-5 py-10">
-        <!-- Header block: inner frame, vertical dashed sides only -->
+        <!-- Header block: inner frame, vertical dashed sides only.
+             Matches the live HF pricing page layout: pill on its own line,
+             then title, then description, then a left-aligned CTA below. -->
         <div class="border-x border-dashed border-line p-8 sm:p-10 lg:p-14">
-          <div class="mb-8 flex items-center justify-between gap-2">
-            <span
-              class="inline-block rounded-full bg-indigo-600/10 px-4 py-1 text-sm font-semibold text-indigo-500"
-              >Inference Endpoints</span
-            >
-            <a
-              href="https://endpoints.huggingface.co"
-              target="_blank"
-              rel="noopener"
-              class="inline-block rounded-full bg-white px-3 py-1.5 text-sm text-black hover:bg-gray-100"
-              ><span class="mr-1.5">→</span> Learn more</a
-            >
-          </div>
+          <span
+            class="mb-8 inline-block rounded-full bg-indigo-600/10 px-4 py-1 text-sm font-semibold text-indigo-500"
+            >Inference Endpoints</span
+          >
           <h2
             class="mb-4 text-balance text-3xl font-bold text-white md:text-4xl"
           >
             Dedicated inference, starting at $0.033/hour.
           </h2>
-          <p class="max-w-3xl text-lg text-gray-400">
+          <p class="mb-8 max-w-3xl text-lg text-gray-400">
             Deploy any ML model on dedicated and autoscaling infrastructure,
             right from the HF Hub. Secure, production-ready, with no cold
             starts.
           </p>
+          <a
+            href="https://endpoints.huggingface.co"
+            target="_blank"
+            rel="noopener"
+            class="inline-block rounded-full bg-white px-3 py-1.5 text-sm text-black hover:bg-gray-100"
+            ><span class="mr-1.5">→</span> Learn more</a
+          >
         </div>
 
         <!-- Tables wrapper: horizontal dashed top/bottom + corners + extension stubs -->
